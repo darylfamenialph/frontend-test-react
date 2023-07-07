@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import { playersByTeam, recaps } from './games';
+import GameHeader from './components/GameHeader';
 
 function App() {
+  // const gameId = 12771;
+  const awayTeamId = recaps?.gameRecap?.awayTeamId;
+  const homeTeamId = recaps?.gameRecap?.homeTeamId;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GameHeader homeTeam={homeTeamId} awayTeam={awayTeamId} />
     </div>
   );
 }
